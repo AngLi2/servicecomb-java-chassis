@@ -38,16 +38,31 @@
             <artifactId>vertx-web</artifactId>
             <version>3.4.2</version>
         </dependency>
+
+        <dependency>
+            <groupId>org.apache.servicecomb</groupId>
+            <artifactId>transport-common</artifactId>
+        </dependency>
+
         <dependency>
             <groupId>org.apache.servicecomb</groupId>
             <artifactId>handler-loadbalance</artifactId>
         </dependency>
 
-        <!-- https://mvnrepository.com/artifact/io.vertx/vertx-codegen -->
+        <dependency>
+            <groupId>org.apache.servicecomb</groupId>
+            <artifactId>foundation-vertx</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.servicecomb</groupId>
+            <artifactId>foundation-common</artifactId>
+        </dependency>
+
         <dependency>
             <groupId>io.vertx</groupId>
             <artifactId>vertx-codegen</artifactId>
-            <version>3.0.0-milestone2</version>
+            <scope>provided</scope>
         </dependency>
 
     </dependencies>
