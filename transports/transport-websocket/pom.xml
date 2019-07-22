@@ -64,6 +64,10 @@
             <artifactId>vertx-codegen</artifactId>
             <scope>provided</scope>
         </dependency>
+        <dependency>
+            <groupId>org.apache.servicecomb</groupId>
+            <artifactId>common-protobuf</artifactId>
+        </dependency>
 
     </dependencies>
 

@@ -43,16 +43,19 @@ public class WebSocketClientConnection {
     public void init(WebSocket webSocket) {
         String remoteAddress = webSocket.remoteAddress().toString();
 
+        System.out.println("connect from "+ remoteAddress + " in thread "+ Thread.currentThread().getName());
         LOGGER.info("connect from {}, in thread {}",
                 remoteAddress,
                 Thread.currentThread().getName());
 
         webSocket.exceptionHandler(e -> {
+            System.out.println(("exception from "+ remoteAddress + " in thread "+ Thread.currentThread().getName()+ ", cause "+ e.getMessage()));
             LOGGER.error("exception from {}, in thread {}, cause {}",
                     remoteAddress,
                     Thread.currentThread().getName(),
                     e.getMessage());
         }).closeHandler(Void -> {
+            System.out.println("disconnect from "+ remoteAddress + " in thread "+ Thread.currentThread().getName());
             LOGGER.info("disconnected from {}, in thread {}",
                     remoteAddress,
                     Thread.currentThread().getName());
