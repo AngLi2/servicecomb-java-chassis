@@ -1,8 +1,12 @@
 package org.apache.servicecomb.transport.rest.vertx;
 
 import io.vertx.core.http.ServerWebSocket;
+import io.vertx.core.http.WebSocket;
+import org.checkerframework.checker.units.qual.C;
 import org.junit.Assert;
 import org.junit.Test;
+
+import java.util.concurrent.CountDownLatch;
 
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
@@ -24,8 +28,15 @@ public class TestWebSocketProcessor {
     WebSocketProcessor webSocketProcessor = new WebSocketProcessor();
 
     class TestWebSocket{
-        @WebSocketSchema(port = 8081)
+        //测试的时候注意设置端口号为空闲的端口号
+        @WebSocketSchema(port = 8080)
         ServerWebSocket serverWebSocket;
+    }
+
+    class TestNotWebSocket{
+        //用于测试当 WebSocketSchema 注解标注在非 ServerWebSocket 的情况
+        @WebSocketSchema(port = 8080)
+        String fakeWebSocket;
     }
 
     @Test
@@ -35,17 +46,26 @@ public class TestWebSocketProcessor {
     }
 
     @Test
-    public void testRefrence(){
+    public void testNoWebSocketRefrence(){
+        TestNotWebSocket bean = new TestNotWebSocket();
+
+        Assert.assertNull(bean.fakeWebSocket);
+
+        Assert.assertSame(bean, webSocketProcessor.postProcessBeforeInitialization(bean, "id"));
+
+        Assert.assertNull(bean.fakeWebSocket);
+    }
+
+    @Test
+    public void testWebSocketRefrence(){
         TestWebSocket bean = new TestWebSocket();
 
         Assert.assertNull(bean.serverWebSocket);
 
-        webSocketProcessor.setEmbeddedValueResolver((strVal) -> strVal);
+        //这里需要在 port 发送任意一个 websocket 请求，否则会导致 postProcessBeforeInitialization handler 阻塞在这
         Assert.assertSame(bean, webSocketProcessor.postProcessBeforeInitialization(bean, "id"));
 
-        System.out.println("send");
-        bean.serverWebSocket.writeTextMessage("das");
-//        Assert.assertNotNull(bean.serverWebSocket);
+        Assert.assertNotNull(bean.serverWebSocket);
     }
 
 
