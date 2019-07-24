@@ -45,6 +45,49 @@ public class WebSocketClient {
         this.init(restEndpoint);
     }
 
+
+    private String findFirstRestUri(List<String> endpoints){
+        String endpoint = endpoints
+                .stream()
+                .filter((String str)->str.startsWith("rest"))
+                .findFirst()
+                .orElse(null);
+        return endpoint;
+    }
+
+    private void init(String endpoint) {
+        URI formatUri = null;
+
+        try{
+            formatUri = new URI(endpoint);
+        }catch (URISyntaxException ignore){
+            ignore.printStackTrace();
+        }
+
+        int port = formatUri.getPort();
+        String host = formatUri.getHost();
+        String path = formatUri.getPath();
+        init(port, host, path);
+    }
+
+    private void init(int port, String host, String path){
+        Vertx vertx = Vertx.vertx();
+
+        CountDownLatch countDownLatch = new CountDownLatch(1);
+
+        vertx.createHttpClient().websocket(port, host, path,
+                ws -> {
+                    this.webSocket = ws;
+                    countDownLatch.countDown();
+                });
+
+        try{
+            countDownLatch.await();
+        }catch (InterruptedException ignore){
+            ignore.printStackTrace();
+        }
+    }
+
 //
 //    public void setMicroserviceInstances(String appId, String serviceName, String versionRule){
 //        setMicroserviceInstances(RegistryUtils.findServiceInstance(appId, serviceName, versionRule));
@@ -160,47 +203,4 @@ public class WebSocketClient {
         this.webSocket.frameHandler(handler);
         return this;
     }
-
-    private String findFirstRestUri(List<String> endpoints){
-        String endpoint = endpoints
-                .stream()
-                .filter((String str)->str.startsWith("rest"))
-                .findFirst()
-                .orElse(null);
-        return endpoint;
-    }
-
-    private void init(String endpoint) {
-        URI formatUri = null;
-
-        try{
-            formatUri = new URI(endpoint);
-        }catch (URISyntaxException ignore){
-            ignore.printStackTrace();
-        }
-
-        int port = formatUri.getPort();
-        String host = formatUri.getHost();
-        String path = formatUri.getPath();
-        init(port, host, path);
-    }
-
-    private void init(int port, String host, String path){
-        Vertx vertx = Vertx.vertx();
-
-        CountDownLatch countDownLatch = new CountDownLatch(1);
-
-        vertx.createHttpClient().websocket(port, host, path,
-                ws -> {
-                    this.webSocket = ws;
-                    countDownLatch.countDown();
-                });
-
-        try{
-            countDownLatch.await();
-        }catch (InterruptedException ignore){
-            ignore.printStackTrace();
-        }
-    }
-
 }
