@@ -35,11 +35,14 @@ public class RuleNameExtentionsFactory implements ExtensionsFactory {
 
   private static final String RULE_SessionStickiness = "SessionStickiness";
 
+  private static final String RULE_ConsistentHashing = "ConsistentHashing";
+
   private static final Collection<String> ACCEPT_VALUES = Lists.newArrayList(
       RULE_RoundRobin,
       RULE_Random,
       RULE_WeightedResponse,
-      RULE_SessionStickiness);
+      RULE_SessionStickiness,
+      RULE_ConsistentHashing);
 
   @Override
   public boolean isSupport(String key, String value) {
@@ -56,6 +59,8 @@ public class RuleNameExtentionsFactory implements ExtensionsFactory {
       return new WeightedResponseTimeRuleExt();
     } else if (RULE_SessionStickiness.equals(ruleName)) {
       return new SessionStickinessRule();
+    }else if (RULE_ConsistentHashing.equals(ruleName)) {
+        return new ConsistentHashingRuleExt();
     } else {
       throw new IllegalStateException("unexpected code to reach here, value is " + ruleName);
     }
