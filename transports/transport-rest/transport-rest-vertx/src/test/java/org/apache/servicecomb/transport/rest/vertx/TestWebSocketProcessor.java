@@ -1,12 +1,8 @@
 package org.apache.servicecomb.transport.rest.vertx;
 
 import io.vertx.core.http.ServerWebSocket;
-import io.vertx.core.http.WebSocket;
-import org.checkerframework.checker.units.qual.C;
 import org.junit.Assert;
 import org.junit.Test;
-
-import java.util.concurrent.CountDownLatch;
 
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
@@ -29,13 +25,13 @@ public class TestWebSocketProcessor {
 
     class TestWebSocket{
         //测试的时候注意设置端口号为空闲的端口号
-        @WebSocketSchema(port = 8080)
+        @WebSocketReference(port = 8080)
         ServerWebSocket serverWebSocket;
     }
 
     class TestNotWebSocket{
-        //用于测试当 WebSocketSchema 注解标注在非 ServerWebSocket 的情况
-        @WebSocketSchema(port = 8080)
+        //用于测试当 WebSocketReference 注解标注在非 ServerWebSocket 的情况
+        @WebSocketReference(port = 8080)
         String fakeWebSocket;
     }
 

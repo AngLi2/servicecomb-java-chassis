@@ -32,7 +32,7 @@ import org.springframework.stereotype.Component;
 @Retention(RUNTIME)
 @Target(FIELD)
 @Component
-public @interface WebSocketSchema {
+public @interface WebSocketReference {
     int port();
 
     //String endpoint();

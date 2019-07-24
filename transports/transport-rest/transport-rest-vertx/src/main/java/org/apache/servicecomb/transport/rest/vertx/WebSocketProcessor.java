@@ -53,19 +53,19 @@ public class WebSocketProcessor implements BeanPostProcessor {
     }
 
     protected void processWebSocketFeild(Object bean, Field field) {
-        WebSocketSchema webSocketSchema = field.getAnnotation(WebSocketSchema.class);
+        WebSocketReference webSocketReference = field.getAnnotation(WebSocketReference.class);
 
-        //若没有被标注 WebSocketSchema 注解，则直接退出
-        if (null == webSocketSchema) {
+        //若没有被标注 WebSocketReference 注解，则直接退出
+        if (null == webSocketReference) {
             return;
         }
 
-        handleWebSocketField(bean, field, webSocketSchema);
+        handleWebSocketField(bean, field, webSocketReference);
     }
 
-    private void handleWebSocketField(Object obj, Field field, WebSocketSchema webSocketSchema) {
+    private void handleWebSocketField(Object obj, Field field, WebSocketReference webSocketReference) {
         //将要监听的地址
-        int port = webSocketSchema.port();
+        int port = webSocketReference.port();
 
         Vertx vertx = Vertx.vertx();
 
