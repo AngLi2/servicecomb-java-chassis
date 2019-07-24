@@ -4,6 +4,9 @@ import io.vertx.core.http.ServerWebSocket;
 import org.junit.Assert;
 import org.junit.Test;
 
+import java.util.Scanner;
+import java.util.concurrent.CountDownLatch;
+
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -62,6 +65,16 @@ public class TestWebSocketProcessor {
         Assert.assertSame(bean, webSocketProcessor.postProcessBeforeInitialization(bean, "id"));
 
         Assert.assertNotNull(bean.serverWebSocket);
+
+        bean.serverWebSocket.writeTextMessage("asdasdasd");
+
+        bean.serverWebSocket.handler(System.out::println);
+
+        for(;;) {
+            Scanner scanner = new Scanner(System.in);
+            String text = scanner.next();
+            bean.serverWebSocket.writeTextMessage(text);
+        }
     }
 
 

@@ -88,8 +88,8 @@ public class WebSocketProcessor implements BeanPostProcessor {
         //等待门闩释放，即等待对象初始化过程结束
         try {
             countDownLatch.await();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
+        } catch (InterruptedException ignore) {
+            ignore.printStackTrace();
         }
     }
 }
