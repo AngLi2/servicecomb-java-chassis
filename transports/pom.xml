@@ -31,5 +31,6 @@
     <module>transport-highway</module>
     <module>transport-rest</module>
     <module>transport-common</module>
+      <module>transport-websocket</module>
   </modules>
 </project>
