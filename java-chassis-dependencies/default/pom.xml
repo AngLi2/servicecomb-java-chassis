@@ -31,29 +31,84 @@
   <packaging>pom</packaging>
 
   <properties>
-    <jackson.version>2.9.8</jackson.version>
-    <vertx.version>3.6.3</vertx.version>
-    <tec.zkclient.version>0.10</tec.zkclient.version>
-    <spring.version>4.3.20.RELEASE</spring.version>
-    <slf4j.version>1.7.26</slf4j.version>
-    <log4j.version>1.2.17</log4j.version>
-    <log4j2.version>2.11.0</log4j2.version>
-    <commons.io.version>2.6</commons.io.version>
-    <javassist.version>3.24.0-GA</javassist.version>
-    <javax.ws.rs.version>2.0.1</javax.ws.rs.version>
-    <javax.servlet.version>4.0.1</javax.servlet.version>
+    <apache.commons.version>3.7</apache.commons.version>
     <apache.httpclient>4.5.7</apache.httpclient>
-    <protostuff.version>1.5.9</protostuff.version>
-    <swagger.version>1.5.22</swagger.version>
-    <netty.version>4.1.28.Final</netty.version>
-    <tcnetty.version>2.0.14.Final</tcnetty.version>
-    <main.basedir>${basedir}/../..</main.basedir>
-    <narayana.version>5.3.2.Final</narayana.version>
-    <cxf.version>3.1.6</cxf.version>
-    <logback.version>1.2.3</logback.version>
+    <archaius.version>2.3.13</archaius.version>
+    <asciidoctor.version>1.6.2</asciidoctor.version>
+    <aspectj.version>1.9.3</aspectj.version>
+    <awaitility.version>3.0.0</awaitility.version>
     <brave.version>5.6.0</brave.version>
-    <zipkin.version>2.9.3</zipkin.version>
+    <commons.beanutils.version>1.9.3</commons.beanutils.version>
+    <commons.configuration.version>2.4</commons.configuration.version>
+    <commons.io.version>2.6</commons.io.version>
+    <commons.lang.version>2.6</commons.lang.version>
+    <commons.logging.version>1.2</commons.logging.version>
+    <cxf.version>3.3.1</cxf.version>
+    <findbugs.annotations.version>2.0.0</findbugs.annotations.version>
+    <findbugs.jsr305.version>3.0.2</findbugs.jsr305.version>
+    <governator.version>1.12.10</governator.version>
+    <guava.version>26.0</guava.version>
+    <guice.version>4.2.0</guice.version>
+    <hamcrest.version>2.1</hamcrest.version>
+    <hibernate.version>6.0.2.Final</hibernate.version>
+    <hibernate.validator.version>6.0.14.Final</hibernate.validator.version>
+    <hystrix.version>1.5.18</hystrix.version>
+    <jackson.version>2.9.8</jackson.version>
+    <javassist.version>3.24.0-GA</javassist.version>
+    <javax.annotation.version>1.3.2</javax.annotation.version>
+    <javax.inject.version>2.5.0-b62</javax.inject.version>
+    <javax.resource.version>1.5.0</javax.resource.version>
+    <javax.servlet.version>4.0.1</javax.servlet.version>
+    <javax.transaction.version>1.2</javax.transaction.version>
+    <javax.validation.version>2.0.1.Final</javax.validation.version>
+    <javax.ws.rs.version>2.1.5</javax.ws.rs.version>
+    <jedis.version>2.9.0</jedis.version>
+    <jettison.version>1.4.0</jettison.version>
+    <jersey.version>2.27</jersey.version>
+    <jmockit.version>1.46</jmockit.version>
+    <json.lib.version>2.4</json.lib.version>
+    <junit.version>4.12</junit.version>
+    <kryo.version>4.0.2</kryo.version>
+    <kryo.serializers.version>0.26</kryo.serializers.version>
+    <log4j.version>1.2.17</log4j.version>
+    <log4j2.version>2.12.0</log4j2.version>
+    <logback.version>1.2.3</logback.version>
+    <main.basedir>${basedir}/../..</main.basedir>
+    <mockito.version>2.28.2</mockito.version>
+    <mock-server.version>3.10.4</mock-server.version>
+    <narayana.version>5.3.2.Final</narayana.version>
+    <netflix.commons.version>0.3.0</netflix.commons.version>
+    <netty.version>4.1.28.Final</netty.version>
+    <okhttp3.version>3.14.2</okhttp3.version>
+    <powermock.version>2.0.2</powermock.version>
+    <prometheus.version>0.6.0</prometheus.version>
+    <protobuf.version>3.6.1</protobuf.version>
+    <protostuff.version>1.5.9</protostuff.version>
+    <protostuff-parser.version>2.2.25</protostuff-parser.version>
+    <ribbon.version>2.3.0</ribbon.version>
+    <rxjava.version>2.1.13</rxjava.version>
+    <rxnetty.version>0.4.9</rxnetty.version>
+    <seanyinx.version>1.0.0</seanyinx.version>
+    <servo.version>0.12.25</servo.version>
+    <slf4j.version>1.7.26</slf4j.version>
+    <snakeyaml.version>1.24</snakeyaml.version>
+    <spectator.version>0.83.0</spectator.version>
+    <spring.version>4.3.22.RELEASE</spring.version>
+    <spring-boot.version>2.1.3.RELEASE</spring-boot.version>
+    <spring-cloud.version>Finchley.M8</spring-cloud.version>
+    <swagger.version>2.0.7</swagger.version>
+    <swagger2markup.version>1.3.3</swagger2markup.version>
+    <tcnetty.version>2.0.14.Final</tcnetty.version>
+    <tec.zkclient.version>0.10</tec.zkclient.version>
+    <tomakehurst.version>2.6.0</tomakehurst.version>
+    <tomcat.embed.version>9.0.19</tomcat.embed.version>
+    <tomcat.embed.logging.version>8.5.2</tomcat.embed.logging.version>
+    <vertx.version>3.6.3</vertx.version>
+    <woodstox.version>4.4.1</woodstox.version>
+    <xstream.version>1.4.11.1</xstream.version>
     <zipkin-reporter.version>2.7.13</zipkin-reporter.version>
+    <zipkin.version>2.9.3</zipkin.version>
+    <zookeeper.version>3.5.5</zookeeper.version>
   </properties>
 
   <dependencyManagement>
@@ -61,17 +116,17 @@
       <dependency>
         <groupId>javax.inject</groupId>
         <artifactId>javax.inject</artifactId>
-        <version>1</version>
+        <version>${javax.inject.version}</version>
       </dependency>
       <dependency>
         <groupId>com.netflix.ribbon</groupId>
         <artifactId>ribbon</artifactId>
-        <version>2.2.5</version>
+        <version>${ribbon.version}</version>
       </dependency>
       <dependency>
         <groupId>com.netflix.ribbon</groupId>
         <artifactId>ribbon-core</artifactId>
-        <version>2.2.5</version>
+        <version>${ribbon.version}</version>
         <exclusions>
           <exclusion>
             <groupId>com.google.code.findbugs</groupId>
@@ -82,7 +137,7 @@
       <dependency>
         <groupId>com.netflix.ribbon</groupId>
         <artifactId>ribbon-loadbalancer</artifactId>
-        <version>2.2.5</version>
+        <version>${ribbon.version}</version>
         <exclusions>
           <exclusion>
             <groupId>com.google.code.findbugs</groupId>
@@ -93,7 +148,7 @@
       <dependency>
         <groupId>com.netflix.hystrix</groupId>
         <artifactId>hystrix-core</artifactId>
-        <version>1.5.12</version>
+        <version>${hystrix.version}</version>
       </dependency>
       <dependency>
         <groupId>ch.qos.logback</groupId>
@@ -108,107 +163,107 @@
       <dependency>
         <groupId>junit</groupId>
         <artifactId>junit</artifactId>
-        <version>4.12</version>
+        <version>${junit.version}</version>
         <scope>test</scope>
       </dependency>
       <dependency>
         <groupId>org.awaitility</groupId>
         <artifactId>awaitility</artifactId>
-        <version>3.0.0</version>
+        <version>${awaitility.version}</version>
         <scope>test</scope>
       </dependency>
       <dependency>
         <groupId>com.github.seanyinx</groupId>
         <artifactId>unit-scaffolding</artifactId>
-        <version>1.0.0</version>
+        <version>${seanyinx.version}</version>
         <scope>test</scope>
       </dependency>
       <dependency>
         <groupId>com.github.tomakehurst</groupId>
         <artifactId>wiremock-standalone</artifactId>
-        <version>2.6.0</version>
+        <version>${tomakehurst.version}</version>
         <scope>test</scope>
       </dependency>
       <dependency>
         <groupId>io.reactivex</groupId>
         <artifactId>rxjava</artifactId>
-        <version>1.1.6</version>
+        <version>${rxjava.version}</version>
       </dependency>
       <dependency>
         <groupId>org.mockito</groupId>
         <artifactId>mockito-core</artifactId>
-        <version>1.10.19</version>
+        <version>${mockito.version}</version>
         <scope>test</scope>
       </dependency>
       <dependency>
         <groupId>org.mockito</groupId>
         <artifactId>mockito-all</artifactId>
-        <version>1.10.19</version>
+        <version>${mockito.version}</version>
         <scope>test</scope>
       </dependency>
       <dependency>
         <groupId>org.jmockit</groupId>
         <artifactId>jmockit</artifactId>
-        <version>1.30</version>
+        <version>${jmockit.version}</version>
         <scope>test</scope>
       </dependency>
       <dependency>
         <groupId>org.hamcrest</groupId>
         <artifactId>hamcrest-core</artifactId>
-        <version>1.3</version>
+        <version>${hamcrest.version}</version>
         <scope>test</scope>
       </dependency>
       <dependency>
         <groupId>org.hamcrest</groupId>
         <artifactId>hamcrest-all</artifactId>
-        <version>1.3</version>
+        <version>${hamcrest.version}</version>
         <scope>test</scope>
       </dependency>
       <dependency>
         <groupId>com.dyuproject.protostuff</groupId>
         <artifactId>protostuff-api</artifactId>
-        <version>1.0.7.fixed.3500</version>
+        <version>${protostuff.version}</version>
       </dependency>
       <dependency>
         <groupId>com.dyuproject.protostuff</groupId>
         <artifactId>protostuff-collectionschema</artifactId>
-        <version>1.0.7.fixed.3500</version>
+        <version>${protostuff.version}</version>
       </dependency>
       <dependency>
         <groupId>com.dyuproject.protostuff</groupId>
         <artifactId>protostuff-core</artifactId>
-        <version>1.0.7.fixed.3500</version>
+        <version>${protostuff.version}</version>
       </dependency>
       <dependency>
         <groupId>com.dyuproject.protostuff</groupId>
         <artifactId>protostuff-runtime</artifactId>
-        <version>1.0.7.fixed.3500</version>
+        <version>${protostuff.version}</version>
       </dependency>
       <dependency>
         <groupId>javax.validation</groupId>
         <artifactId>validation-api</artifactId>
-        <version>2.0.1.Final</version>
+        <version>${javax.validation.version}</version>
       </dependency>
       <dependency>
         <groupId>org.hibernate</groupId>
         <artifactId>hibernate-validator</artifactId>
-        <version>6.0.2.Final</version>
+        <version>${hibernate.version}</version>
       </dependency>
       <dependency>
         <groupId>org.hibernate.validator</groupId>
         <artifactId>hibernate-validator</artifactId>
-        <version>6.0.14.Final</version>
+        <version>${hibernate.validator.version}</version>
       </dependency>
 
       <dependency>
         <groupId>org.aspectj</groupId>
         <artifactId>aspectjweaver</artifactId>
-        <version>1.8.13</version>
+        <version>${aspectj.version}</version>
       </dependency>
       <dependency>
         <groupId>com.google.guava</groupId>
         <artifactId>guava</artifactId>
-        <version>26.0-jre</version>
+        <version>${guava.version}</version>
       </dependency>
 
       <dependency>
@@ -279,41 +334,41 @@
       <dependency>
         <groupId>org.powermock</groupId>
         <artifactId>powermock-api-mockito</artifactId>
-        <version>1.6.2</version>
+        <version>${powermock.version}</version>
         <scope>test</scope>
       </dependency>
       <dependency>
         <groupId>org.powermock</groupId>
         <artifactId>powermock-module-junit4</artifactId>
-        <version>1.6.2</version>
+        <version>${powermock.version}</version>
         <scope>test</scope>
       </dependency>
 
       <dependency>
         <groupId>org.apache.tomcat.embed</groupId>
         <artifactId>tomcat-embed-core</artifactId>
-        <version>8.5.32</version>
+        <version>${tomcat.embed.version}</version>
       </dependency>
       <dependency>
         <groupId>org.apache.tomcat.embed</groupId>
         <artifactId>tomcat-embed-el</artifactId>
-        <version>8.5.32</version>
+        <version>${tomcat.embed.version}</version>
       </dependency>
       <dependency>
         <groupId>org.apache.tomcat.embed</groupId>
         <artifactId>tomcat-embed-logging-juli</artifactId>
-        <version>8.5.2</version>
+        <version>${tomcat.embed.logging.version}</version>
       </dependency>
       <dependency>
         <groupId>org.apache.tomcat.embed</groupId>
         <artifactId>tomcat-embed-websocket</artifactId>
-        <version>8.5.32</version>
+        <version>${tomcat.embed.version}</version>
       </dependency>
 
       <dependency>
         <groupId>com.squareup.okhttp3</groupId>
         <artifactId>okhttp</artifactId>
-        <version>3.11.0</version>
+        <version>${okhttp3.version}</version>
       </dependency>
 
       <dependency>
@@ -325,50 +380,50 @@
       <dependency>
         <groupId>commons-lang</groupId>
         <artifactId>commons-lang</artifactId>
-        <version>2.6</version>
+        <version>${commons.lang.version}</version>
       </dependency>
 
       <dependency>
         <groupId>commons-logging</groupId>
         <artifactId>commons-logging</artifactId>
-        <version>1.2</version>
+        <version>${commons.logging.version}</version>
       </dependency>
 
       <dependency>
         <groupId>javax.resource</groupId>
         <artifactId>connector-api</artifactId>
-        <version>1.5</version>
+        <version>${javax.resource.version}</version>
       </dependency>
       <dependency>
         <groupId>org.yaml</groupId>
         <artifactId>snakeyaml</artifactId>
-        <version>1.23</version>
+        <version>${snakeyaml.version}</version>
       </dependency>
       <dependency>
         <groupId>org.hibernate</groupId>
         <artifactId>hibernate-validator-annotation-processor</artifactId>
-        <version>6.0.2.Final</version>
+        <version>${hibernate.version}</version>
       </dependency>
       <dependency>
         <groupId>org.hibernate.validator</groupId>
         <artifactId>hibernate-validator-annotation-processor</artifactId>
-        <version>6.0.2.Final</version>
+        <version>${hibernate.validator.version}</version>
       </dependency>
       <dependency>
         <groupId>javax.transaction</groupId>
         <artifactId>javax.transaction-api</artifactId>
-        <version>1.2</version>
+        <version>${javax.transaction.version}</version>
       </dependency>
 
       <dependency>
         <groupId>org.apache.commons</groupId>
         <artifactId>commons-lang3</artifactId>
-        <version>3.7</version>
+        <version>${apache.commons.version}</version>
       </dependency>
       <dependency>
         <groupId>commons-beanutils</groupId>
         <artifactId>commons-beanutils</artifactId>
-        <version>1.9.3</version>
+        <version>${commons.beanutils.version}</version>
       </dependency>
       <dependency>
         <groupId>org.apache.cxf</groupId>
@@ -383,7 +438,7 @@
       <dependency>
         <groupId>com.netflix.servo</groupId>
         <artifactId>servo-core</artifactId>
-        <version>0.12.25</version>
+        <version>${servo.version}</version>
         <exclusions>
           <exclusion>
             <groupId>com.google.code.findbugs</groupId>
@@ -394,22 +449,22 @@
       <dependency>
         <groupId>com.netflix.spectator</groupId>
         <artifactId>spectator-reg-servo</artifactId>
-        <version>0.83.0</version>
+        <version>${spectator.version}</version>
       </dependency>
       <dependency>
         <groupId>com.google.inject</groupId>
         <artifactId>guice</artifactId>
-        <version>4.2.0</version>
+        <version>${guice.version}</version>
       </dependency>
       <dependency>
         <groupId>org.glassfish.jersey.core</groupId>
         <artifactId>jersey-common</artifactId>
-        <version>2.22.2</version>
+        <version>${jersey.version}</version>
       </dependency>
       <dependency>
         <groupId>io.reactivex</groupId>
         <artifactId>rxnetty</artifactId>
-        <version>0.4.9</version>
+        <version>${rxnetty.version}</version>
         <exclusions>
           <!-- alreadly in io.netty-all -->
           <exclusion>
@@ -430,41 +485,41 @@
       <dependency>
         <groupId>com.esotericsoftware</groupId>
         <artifactId>kryo-shaded</artifactId>
-        <version>4.0.2</version>
+        <version>${kryo.version}</version>
       </dependency>
       <dependency>
         <groupId>de.javakaffee</groupId>
         <artifactId>kryo-serializers</artifactId>
-        <version>0.26</version>
+        <version>${kryo.serializers.version}</version>
       </dependency>
       <dependency>
         <groupId>net.sf.json-lib</groupId>
         <artifactId>json-lib</artifactId>
-        <version>2.4</version>
+        <version>${json.lib.version}</version>
         <classifier>jdk15</classifier>
       </dependency>
       <dependency>
         <groupId>com.netflix.governator</groupId>
         <artifactId>governator-api</artifactId>
-        <version>1.12.10</version>
+        <version>${governator.version}</version>
       </dependency>
       <dependency>
         <groupId>org.codehaus.woodstox</groupId>
         <artifactId>woodstox-core-asl</artifactId>
-        <version>4.4.1</version>
+        <version>${woodstox.version}</version>
         <scope>provided</scope>
       </dependency>
 
       <dependency>
         <groupId>org.codehaus.jettison</groupId>
         <artifactId>jettison</artifactId>
-        <version>1.3.8</version>
+        <version>${jettison.version}</version>
         <scope>runtime</scope>
       </dependency>
       <dependency>
         <groupId>com.netflix.archaius</groupId>
         <artifactId>archaius-core</artifactId>
-        <version>0.7.3</version>
+        <version>${archaius.version}</version>
         <exclusions>
           <exclusion>
             <groupId>com.google.code.findbugs</groupId>
@@ -475,23 +530,23 @@
       <dependency>
         <groupId>com.google.code.findbugs</groupId>
         <artifactId>jsr305</artifactId>
-        <version>3.0.1</version>
+        <version>${findbugs.jsr305.version}</version>
       </dependency>
       <dependency>
         <groupId>com.google.code.findbugs</groupId>
         <artifactId>annotations</artifactId>
-        <version>2.0.0</version>
+        <version>${findbugs.annotations.version}</version>
       </dependency>
       <dependency>
         <groupId>commons-configuration</groupId>
         <artifactId>commons-configuration</artifactId>
-        <version>1.10</version>
+        <version>${commons.configuration.version}</version>
       </dependency>
 
       <dependency>
         <groupId>com.netflix.netflix-commons</groupId>
         <artifactId>netflix-eventbus</artifactId>
-        <version>0.3.0</version>
+        <version>${netflix.commons.version}</version>
         <exclusions>
           <exclusion>
             <groupId>javax.servlet</groupId>
@@ -502,18 +557,18 @@
       <dependency>
         <groupId>com.thoughtworks.xstream</groupId>
         <artifactId>xstream</artifactId>
-        <version>1.4.9</version>
+        <version>${xstream.version}</version>
       </dependency>
       <dependency>
         <groupId>com.netflix.governator</groupId>
         <artifactId>governator-annotations</artifactId>
-        <version>1.14.2</version>
+        <version>${governator.version}</version>
       </dependency>
 
       <dependency>
         <groupId>com.netflix.netflix-commons</groupId>
         <artifactId>netflix-eventbus-rx</artifactId>
-        <version>0.3.0</version>
+        <version>${netflix.commons.version}</version>
         <exclusions>
           <exclusion>
             <groupId>javax.servlet</groupId>
@@ -529,32 +584,32 @@
       <dependency>
         <groupId>org.apache.zookeeper</groupId>
         <artifactId>zookeeper</artifactId>
-        <version>3.4.13</version>
+        <version>${zookeeper.version}</version>
         <scope>provided</scope>
         <optional>true</optional>
       </dependency>
       <dependency>
         <groupId>redis.clients</groupId>
         <artifactId>jedis</artifactId>
-        <version>2.9.0</version>
+        <version>${jedis.version}</version>
         <scope>provided</scope>
         <optional>true</optional>
       </dependency>
       <dependency>
         <groupId>org.mock-server</groupId>
         <artifactId>mockserver-netty</artifactId>
-        <version>3.10.4</version>
+        <version>${mock-server.version}</version>
         <scope>test</scope>
       </dependency>
       <dependency>
         <groupId>javax.annotation</groupId>
         <artifactId>javax.annotation-api</artifactId>
-        <version>1.2</version>
+        <version>${javax.annotation.version}</version>
       </dependency>
       <dependency>
         <groupId>org.powermock</groupId>
         <artifactId>powermock-module-test-mockito-junit4-delegate</artifactId>
-        <version>1.6.2</version>
+        <version>${powermock.version}</version>
         <scope>test</scope>
       </dependency>
 
@@ -710,7 +765,7 @@
       <dependency>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-dependencies</artifactId>
-        <version>1.5.12.RELEASE</version>
+        <version>${spring-boot.version}</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
@@ -718,7 +773,7 @@
       <dependency>
         <groupId>org.springframework.cloud</groupId>
         <artifactId>spring-cloud-dependencies</artifactId>
-        <version>Edgware.SR3</version>
+        <version>${spring-cloud.version}</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
@@ -779,12 +834,12 @@
       <dependency>
         <groupId>io.prometheus</groupId>
         <artifactId>simpleclient</artifactId>
-        <version>0.3.0</version>
+        <version>${prometheus.version}</version>
       </dependency>
       <dependency>
         <groupId>io.prometheus</groupId>
         <artifactId>simpleclient_httpserver</artifactId>
-        <version>0.1.0</version>
+        <version>${prometheus.version}</version>
       </dependency>
 
       <dependency>
@@ -820,7 +875,7 @@
       <dependency>
         <groupId>io.protostuff</groupId>
         <artifactId>protostuff-parser</artifactId>
-        <version>2.2.25</version>
+        <version>${protostuff-parser.version}</version>
       </dependency>
       <dependency>
         <groupId>io.swagger</groupId>
@@ -830,17 +885,17 @@
       <dependency>
         <groupId>com.google.protobuf</groupId>
         <artifactId>protobuf-java</artifactId>
-        <version>3.6.1</version>
+        <version>${protobuf.version}</version>
       </dependency>
       <dependency>
         <groupId>org.asciidoctor</groupId>
         <artifactId>asciidoctorj</artifactId>
-        <version>1.6.2</version>
+        <version>${asciidoctor.version}</version>
       </dependency>
       <dependency>
         <groupId>io.github.swagger2markup</groupId>
         <artifactId>swagger2markup</artifactId>
-        <version>1.3.3</version>
+        <version>${swagger2markup.version}</version>
       </dependency>
 
       <!-- This project modules -->
